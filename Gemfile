@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'devise'
+gem 'mailgun'
+gem 'bootstrap-sass'
+gem 'faker'
+
