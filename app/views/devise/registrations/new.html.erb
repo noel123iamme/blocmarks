@@ -1,7 +1,8 @@
-<h2 class="media-heading">Sign up</h2>
+<div class="container">
+<h3 class="media-heading">Sign up</h3>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-4">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group">
@@ -17,7 +18,6 @@
         <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
       </div>
       <div class="form-group">
@@ -28,4 +28,5 @@
       </div>
     <% end %>
   </div>
+</div>
 </div>

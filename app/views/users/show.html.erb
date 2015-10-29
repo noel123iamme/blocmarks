@@ -1,5 +1,6 @@
-<% if current_user.name %>
-  <h3 class="media-heading"><%= current_user.name %></h3>
-<% end %>
-<p class="media-body"><%= current_user.email %></p>
-
+<div class="container">
+  <% if current_user.name %>
+    <h3 class="media-heading"><%= current_user.name %></h3>
+  <% end %>
+  <p class="media-body"><%= current_user.email %></p>
+</div>
