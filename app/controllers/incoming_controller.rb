@@ -12,7 +12,7 @@ class IncomingController < ApplicationController
       user = User.new(
         name:     params[:sender], 
         email:    params[:sender],
-        password: 'helloworld',
+        password: 'helloworld'
       )
       user.skip_confirmation!
       user.save!     
@@ -20,7 +20,7 @@ class IncomingController < ApplicationController
 
     if @topic.nil?
       topic = Topic.new(
-        title:    params[:subject],ß
+        title:    params[:subject],
         user:     user  
       )
       topic.save!
