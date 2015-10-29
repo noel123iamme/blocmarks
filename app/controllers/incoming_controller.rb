@@ -7,14 +7,14 @@ class IncomingController < ApplicationController
     #puts "INCOMING PARAMS HERE: #{params}"
 
 
-    @user = User.find_by(email: params[:return-path])
+    @user = User.find_by(email: params["Return-Path"])
     @topic = Topic.find_by(title: params[:subject])
     @url = params["body-plain"]     
 
     if @user.nil?
       user = User.new(
-        name:     params[:return-path], 
-        email:    params[:return-path],
+        name:     params["Return-Path"], 
+        email:    params["Return-Path"],
         password: 'helloworld'
       )
       user.skip_confirmation!
