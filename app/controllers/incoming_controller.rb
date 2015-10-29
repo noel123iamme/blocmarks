@@ -4,17 +4,17 @@ class IncomingController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
-    puts "INCOMING PARAMS HERE: #{params}"
-    
-=begin
-    @user = User.find_by(email: params[:sender])
+    #puts "INCOMING PARAMS HERE: #{params}"
+
+
+    @user = User.find_by(email: params[:return-path])
     @topic = Topic.find_by(title: params[:subject])
     @url = params["body-plain"]     
 
     if @user.nil?
       user = User.new(
-        name:     params[:sender], 
-        email:    params[:sender],
+        name:     params[:return-path], 
+        email:    params[:return-path],
         password: 'helloworld'
       )
       user.skip_confirmation!
@@ -37,7 +37,7 @@ class IncomingController < ApplicationController
       )
       bookmark.save!
     end
-=end
+
 
     head 200
   end
