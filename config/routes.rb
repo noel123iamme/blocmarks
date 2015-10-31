@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update]
 
+  resources :topics
+
   post :incoming, to: 'incoming#create'
 
   get 'about' => 'welcome#about'
